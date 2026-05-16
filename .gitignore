@@ -1,6 +1,7 @@
 # Credentials and personal data — never commit these
 audible_auth.json
 audible_data.json
+audible_dashboard_v2.html
 
 # Virtual environment
 audible-env/
