@@ -5,6 +5,7 @@ Saves an auth file locally for use by audible_stats.py
 """
 
 import audible
+import getpass
 
 AUTH_FILE = 'audible_auth.json'
 
@@ -16,7 +17,7 @@ print("You only need to do this once.\n")
 
 auth = audible.Authenticator.from_login(
     username=input("Audible/Amazon email: "),
-    password=input("Password: "),
+    password=getpass.getpass("Password: "),
     locale="us",
     with_username=False
 )

@@ -149,4 +149,4 @@ for b in sorted_books[:10]:
     status = '✓' if b.get('is_finished') else f"{b.get('percent_complete', 0)}%"
     print(f"  {b.get('title', '?')[:48]:<50} {round(mins/60, 1)}h  {status}")
 
-print(f"\nDone. Open audible_dashboard_v2.html in a browser to see the full dashboard.")
+print(f"\nDone. Run: streamlit run audible_app.py")

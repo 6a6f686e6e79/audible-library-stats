@@ -1,3 +1,3 @@
-audible
-streamlit
-pandas
+audible>=0.8.2
+streamlit>=1.57.0
+pandas>=3.0.3
