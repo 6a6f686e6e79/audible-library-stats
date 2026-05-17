@@ -2,6 +2,8 @@
 
 An interactive dashboard for exploring your personal Audible library. Authenticate once with the Audible API, fetch your full library data, and browse it through a Streamlit web app with charts, filters, and deep-dive views.
 
+![Dashboard overview](screenshots/01-library.png)
+
 ## What It Does
 
 - **Authenticate** (`audible_auth.py`) — logs into Audible and saves a local auth token (run once)
@@ -69,6 +71,33 @@ Opens the interactive dashboard in your browser at `http://localhost:8501`.
 | `audible_auth.json` | Auth token — **gitignored, never commit** |
 | `audible_data.json` | Cached library data — **gitignored, never commit** |
 
+## Screenshots
+
+All screenshots use an entirely fictional library (invented titles and authors) — no real listening data is included in this repo.
+
+| View | Preview |
+| --- | --- |
+| Library | [01-library.png](screenshots/01-library.png) |
+| Library (full) | [00-overview-full.png](screenshots/00-overview-full.png) |
+| Charts | [02-charts.png](screenshots/02-charts.png) |
+| Charts (full) | [02-charts-full.png](screenshots/02-charts-full.png) |
+| Deep Dive | [03-deep-dive.png](screenshots/03-deep-dive.png) |
+| Deep Dive (full) | [03-deep-dive-full.png](screenshots/03-deep-dive-full.png) |
+
+### Regenerating screenshots
+
+```bash
+pip install playwright
+playwright install chromium
+python screenshots/generate_screenshots.py
+```
+
+The script writes a fictional `audible_data.json` fixture, launches Streamlit on port 8765, captures each tab, and restores any pre-existing `audible_data.json` afterward.
+
 ## Privacy
 
 `audible_auth.json` and `audible_data.json` are listed in `.gitignore` and will not be committed. Do not share these files — they contain your Audible credentials and personal library data.
+
+## License
+
+Released under the [MIT License](LICENSE).
